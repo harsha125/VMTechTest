@@ -19,11 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard
             let _ = (scene as? UIWindowScene),
             let navigationController = window?.rootViewController as? UINavigationController,
-            let controller = navigationController.topViewController as? ContactsListViewController
+            let controller = navigationController.topViewController as? VMDirectoryListViewController
         else { return }
         let apiClient = APICommunicator()
         let context = ApplicationContext(apiCommunicator: apiClient)
-        let presenter = ContactsListPresenter(context: context, view: controller)
+        let presenter = VMDirectoryListPresenter(context: context, view: controller)
         controller.presenter = presenter
     }
 

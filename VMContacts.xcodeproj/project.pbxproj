@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		3A195C74270A63780075A556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C73270A63780075A556 /* AppDelegate.swift */; };
 		3A195C76270A63780075A556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C75270A63780075A556 /* SceneDelegate.swift */; };
-		3A195C78270A63780075A556 /* ContactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C77270A63780075A556 /* ContactsListViewController.swift */; };
+		3A195C78270A63780075A556 /* VMDirectoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C77270A63780075A556 /* VMDirectoryListViewController.swift */; };
 		3A195C7B270A63780075A556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A195C79270A63780075A556 /* Main.storyboard */; };
 		3A195C7D270A637B0075A556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A195C7C270A637B0075A556 /* Assets.xcassets */; };
 		3A195C80270A637B0075A556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A195C7E270A637B0075A556 /* LaunchScreen.storyboard */; };
 		3A195C8B270A637B0075A556 /* VMContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C8A270A637B0075A556 /* VMContactsTests.swift */; };
 		3A195C96270A637B0075A556 /* VMContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C95270A637B0075A556 /* VMContactsUITests.swift */; };
-		3A195CB1270A6A990075A556 /* ContactsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CB0270A6A990075A556 /* ContactsListPresenter.swift */; };
+		3A195CB1270A6A990075A556 /* VMDirectoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CB0270A6A990075A556 /* VMDirectoryListPresenter.swift */; };
 		3A195CB7270BA4D60075A556 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CB6270BA4D60075A556 /* Person.swift */; };
 		3A195CBF270BA82B0075A556 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CBE270BA82B0075A556 /* Room.swift */; };
 		3A195CC7270BACD70075A556 /* ApplicationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CC6270BACD70075A556 /* ApplicationContext.swift */; };
@@ -35,6 +35,8 @@
 		3AD0B47227208BDB006880FC /* BaseModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B47127208BDB006880FC /* BaseModelItem.swift */; };
 		3AD0B47A27208BFA006880FC /* PersonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B47927208BFA006880FC /* PersonItem.swift */; };
 		3AD0B47F27208C31006880FC /* RoomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B47E27208C31006880FC /* RoomItem.swift */; };
+		3AD0B48A272093A5006880FC /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AD0B489272093A5006880FC /* people.json */; };
+		3AD0B48F27209408006880FC /* rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AD0B48E27209408006880FC /* rooms.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,7 @@
 		3A195C70270A63780075A556 /* VMContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A195C73270A63780075A556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A195C75270A63780075A556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A195C77270A63780075A556 /* ContactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewController.swift; sourceTree = "<group>"; };
+		3A195C77270A63780075A556 /* VMDirectoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDirectoryListViewController.swift; sourceTree = "<group>"; };
 		3A195C7A270A63780075A556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A195C7C270A637B0075A556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A195C7F270A637B0075A556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 		3A195C91270A637B0075A556 /* VMContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VMContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A195C95270A637B0075A556 /* VMContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMContactsUITests.swift; sourceTree = "<group>"; };
 		3A195C97270A637B0075A556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A195CB0270A6A990075A556 /* ContactsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListPresenter.swift; sourceTree = "<group>"; };
+		3A195CB0270A6A990075A556 /* VMDirectoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDirectoryListPresenter.swift; sourceTree = "<group>"; };
 		3A195CB6270BA4D60075A556 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3A195CBE270BA82B0075A556 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		3A195CC6270BACD70075A556 /* ApplicationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContext.swift; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		3AD0B47127208BDB006880FC /* BaseModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModelItem.swift; sourceTree = "<group>"; };
 		3AD0B47927208BFA006880FC /* PersonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonItem.swift; sourceTree = "<group>"; };
 		3AD0B47E27208C31006880FC /* RoomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomItem.swift; sourceTree = "<group>"; };
+		3AD0B489272093A5006880FC /* people.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		3AD0B48E27209408006880FC /* rooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rooms.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				3A195CA8270A66500075A556 /* Assets */,
 				3A195CAA270A66CE0075A556 /* Helpers */,
 				3A195C81270A637B0075A556 /* Info.plist */,
+				3AD0B48727209368006880FC /* Supporting Files */,
 				3A195CA9270A665B0075A556 /* Models */,
 				3A195CAB270A66DC0075A556 /* Storyboards */,
 				3A195CD3271F5ABA0075A556 /* Utilities */,
@@ -230,8 +235,8 @@
 			children = (
 				3AD0B43B271F7EAA006880FC /* ContactsCollectionViewCell.swift */,
 				3AD0B43C271F7EAA006880FC /* ContactsCollectionViewCell.xib */,
-				3A195CB0270A6A990075A556 /* ContactsListPresenter.swift */,
-				3A195C77270A63780075A556 /* ContactsListViewController.swift */,
+				3A195CB0270A6A990075A556 /* VMDirectoryListPresenter.swift */,
+				3A195C77270A63780075A556 /* VMDirectoryListViewController.swift */,
 				3AD0B442271F7EBF006880FC /* RoomsCollectionViewCell.swift */,
 				3AD0B443271F7EBF006880FC /* RoomsCollectionViewCell.xib */,
 				3AD0B46B2720787E006880FC /* VMCollectionViewCell.swift */,
@@ -266,6 +271,23 @@
 				3AD0B47E27208C31006880FC /* RoomItem.swift */,
 			);
 			path = BusinessModels;
+			sourceTree = "<group>";
+		};
+		3AD0B48727209368006880FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0B48827209374006880FC /* Mock Data */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AD0B48827209374006880FC /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0B489272093A5006880FC /* people.json */,
+				3AD0B48E27209408006880FC /* rooms.json */,
+			);
+			path = "Mock Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,8 +395,10 @@
 			files = (
 				3A195C80270A637B0075A556 /* LaunchScreen.storyboard in Resources */,
 				3AD0B43E271F7EAA006880FC /* ContactsCollectionViewCell.xib in Resources */,
+				3AD0B48A272093A5006880FC /* people.json in Resources */,
 				3A195C7D270A637B0075A556 /* Assets.xcassets in Resources */,
 				3A195C7B270A63780075A556 /* Main.storyboard in Resources */,
+				3AD0B48F27209408006880FC /* rooms.json in Resources */,
 				3AD0B445271F7EBF006880FC /* RoomsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,13 +430,13 @@
 				3AD0B46C2720787E006880FC /* VMCollectionViewCell.swift in Sources */,
 				3A195CD5271F5AD40075A556 /* Colors.swift in Sources */,
 				3A195CCC270D028C0075A556 /* VMDataLoader.swift in Sources */,
-				3A195C78270A63780075A556 /* ContactsListViewController.swift in Sources */,
+				3A195C78270A63780075A556 /* VMDirectoryListViewController.swift in Sources */,
 				3AD0B45227204525006880FC /* AppConfig.swift in Sources */,
 				3AD0B45C27204758006880FC /* JSONItemsMapper.swift in Sources */,
 				3A195CC7270BACD70075A556 /* ApplicationContext.swift in Sources */,
 				3A195CBF270BA82B0075A556 /* Room.swift in Sources */,
 				3A195CE2271F5B370075A556 /* Utils.swift in Sources */,
-				3A195CB1270A6A990075A556 /* ContactsListPresenter.swift in Sources */,
+				3A195CB1270A6A990075A556 /* VMDirectoryListPresenter.swift in Sources */,
 				3AD0B47A27208BFA006880FC /* PersonItem.swift in Sources */,
 				3AD0B4572720455E006880FC /* APICommunicator.swift in Sources */,
 				3AD0B444271F7EBF006880FC /* RoomsCollectionViewCell.swift in Sources */,

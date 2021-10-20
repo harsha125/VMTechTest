@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contacts List View Controller-->
+        <!--Directory List View Controller-->
         <scene sceneID="Pnz-8j-r7Q">
             <objects>
-                <viewController storyboardIdentifier="ContactsListViewController" id="abf-AL-OIa" customClass="ContactsListViewController" customModule="VMContacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VMDirectoryListViewController" id="abf-AL-OIa" customClass="VMDirectoryListViewController" customModule="VMContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0T-iI-CIp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

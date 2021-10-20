@@ -1,5 +1,5 @@
 //
-//  ContactsListViewController.swift
+//  VMDirectoryListViewController.swift
 //  VMContacts
 //
 //  Created by Harsha on 03/10/2021.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol ContactsListPresenterViewProtocol {
+protocol VMDirectoryListPresenterViewProtocol {
     func reloadData(state: LoadingState)
 }
 
-class ContactsListViewController: UIViewController {
+class VMDirectoryListViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
-    var presenter: ContactsListPresenter?
+    var presenter: VMDirectoryListPresenter?
     private lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         cv.translatesAutoresizingMaskIntoConstraints = false
@@ -105,7 +105,7 @@ class ContactsListViewController: UIViewController {
 
 }
 
-extension ContactsListViewController: UICollectionViewDataSource {
+extension VMDirectoryListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         presenter?.numberofSections ?? 0
     }
@@ -136,7 +136,7 @@ extension ContactsListViewController: UICollectionViewDataSource {
 }
 
 
-extension ContactsListViewController: UISearchResultsUpdating {
+extension VMDirectoryListViewController: UISearchResultsUpdating {
 
     private var searchText: String? {
         searchController.searchBar.text
@@ -151,7 +151,7 @@ extension ContactsListViewController: UISearchResultsUpdating {
 }
 
 
-extension ContactsListViewController: ContactsListPresenterViewProtocol {
+extension VMDirectoryListViewController: VMDirectoryListPresenterViewProtocol {
 
     private func configureErrorView(with errorText: String) -> UIView {
         let errorView = UIView(frame: .zero)

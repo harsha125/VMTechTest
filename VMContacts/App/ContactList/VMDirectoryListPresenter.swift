@@ -1,5 +1,5 @@
 //
-//  ContactsListPresenter.swift
+//  VMDirectoryListPresenter.swift
 //  VMContacts
 //
 //  Created by Harsha on 03/10/2021.
@@ -17,7 +17,7 @@ enum LoadingState {
     case error(error: DataLoader.Error)
 }
 
-protocol ContactsListPresenterProtocol {
+protocol VMDirectoryListPresenterProtocol {
     var numberofSections: Int { get }
     var numberofRows: Int { get }
     func getData(for indexPath: IndexPath) -> BaseModelItem?
@@ -29,9 +29,9 @@ protocol ContactsListPresenterProtocol {
     func updateListType(to selectedListType:  ListType)
 }
 
-final class ContactsListPresenter: ContactsListPresenterProtocol {
+final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
     
-    private let view: ContactsListPresenterViewProtocol
+    private let view: VMDirectoryListPresenterViewProtocol
     let context: ApplicationContext
     private var unfilteredContactList: [PersonItem]? = nil {
         didSet {
@@ -53,7 +53,7 @@ final class ContactsListPresenter: ContactsListPresenterProtocol {
     
     private(set) var listType: ListType = .people
 
-    init(context: ApplicationContext, view: ContactsListPresenterViewProtocol) {
+    init(context: ApplicationContext, view: VMDirectoryListPresenterViewProtocol) {
         self.context = context
         self.view = view
     }

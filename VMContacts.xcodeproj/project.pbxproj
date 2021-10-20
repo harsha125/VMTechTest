@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		3A195C74270A63780075A556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C73270A63780075A556 /* AppDelegate.swift */; };
 		3A195C76270A63780075A556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C75270A63780075A556 /* SceneDelegate.swift */; };
-		3A195C78270A63780075A556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C77270A63780075A556 /* ViewController.swift */; };
+		3A195C78270A63780075A556 /* ContactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C77270A63780075A556 /* ContactsListViewController.swift */; };
 		3A195C7B270A63780075A556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A195C79270A63780075A556 /* Main.storyboard */; };
 		3A195C7D270A637B0075A556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A195C7C270A637B0075A556 /* Assets.xcassets */; };
 		3A195C80270A637B0075A556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A195C7E270A637B0075A556 /* LaunchScreen.storyboard */; };
 		3A195C8B270A637B0075A556 /* VMContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C8A270A637B0075A556 /* VMContactsTests.swift */; };
 		3A195C96270A637B0075A556 /* VMContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195C95270A637B0075A556 /* VMContactsUITests.swift */; };
+		3A195CB1270A6A990075A556 /* ContactsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CB0270A6A990075A556 /* ContactsListPresenter.swift */; };
+		3A195CB7270BA4D60075A556 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CB6270BA4D60075A556 /* Person.swift */; };
+		3A195CBF270BA82B0075A556 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CBE270BA82B0075A556 /* Room.swift */; };
+		3A195CC7270BACD70075A556 /* ApplicationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CC6270BACD70075A556 /* ApplicationContext.swift */; };
+		3A195CCC270D028C0075A556 /* VMDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CCB270D028C0075A556 /* VMDataLoader.swift */; };
+		3A195CD5271F5AD40075A556 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CD4271F5AD40075A556 /* Colors.swift */; };
+		3A195CDD271F5B150075A556 /* UIKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CDC271F5B150075A556 /* UIKitUtils.swift */; };
+		3A195CE2271F5B370075A556 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CE1271F5B370075A556 /* Utils.swift */; };
+		3AD0B43D271F7EAA006880FC /* ContactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B43B271F7EAA006880FC /* ContactsCollectionViewCell.swift */; };
+		3AD0B43E271F7EAA006880FC /* ContactsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD0B43C271F7EAA006880FC /* ContactsCollectionViewCell.xib */; };
+		3AD0B444271F7EBF006880FC /* RoomsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B442271F7EBF006880FC /* RoomsCollectionViewCell.swift */; };
+		3AD0B445271F7EBF006880FC /* RoomsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD0B443271F7EBF006880FC /* RoomsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +50,7 @@
 		3A195C70270A63780075A556 /* VMContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A195C73270A63780075A556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A195C75270A63780075A556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A195C77270A63780075A556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A195C77270A63780075A556 /* ContactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewController.swift; sourceTree = "<group>"; };
 		3A195C7A270A63780075A556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A195C7C270A637B0075A556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A195C7F270A637B0075A556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +61,18 @@
 		3A195C91270A637B0075A556 /* VMContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VMContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A195C95270A637B0075A556 /* VMContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMContactsUITests.swift; sourceTree = "<group>"; };
 		3A195C97270A637B0075A556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A195CB0270A6A990075A556 /* ContactsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListPresenter.swift; sourceTree = "<group>"; };
+		3A195CB6270BA4D60075A556 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3A195CBE270BA82B0075A556 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		3A195CC6270BACD70075A556 /* ApplicationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContext.swift; sourceTree = "<group>"; };
+		3A195CCB270D028C0075A556 /* VMDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDataLoader.swift; sourceTree = "<group>"; };
+		3A195CD4271F5AD40075A556 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3A195CDC271F5B150075A556 /* UIKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitUtils.swift; sourceTree = "<group>"; };
+		3A195CE1271F5B370075A556 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3AD0B43B271F7EAA006880FC /* ContactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AD0B43C271F7EAA006880FC /* ContactsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsCollectionViewCell.xib; sourceTree = "<group>"; };
+		3AD0B442271F7EBF006880FC /* RoomsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AD0B443271F7EBF006880FC /* RoomsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +123,14 @@
 		3A195C72270A63780075A556 /* VMContacts */ = {
 			isa = PBXGroup;
 			children = (
-				3A195C73270A63780075A556 /* AppDelegate.swift */,
-				3A195C75270A63780075A556 /* SceneDelegate.swift */,
-				3A195C77270A63780075A556 /* ViewController.swift */,
-				3A195C79270A63780075A556 /* Main.storyboard */,
-				3A195C7C270A637B0075A556 /* Assets.xcassets */,
-				3A195C7E270A637B0075A556 /* LaunchScreen.storyboard */,
+				3A195CA6270A64230075A556 /* App */,
+				3A195CA7270A649A0075A556 /* AppDelegate */,
+				3A195CA8270A66500075A556 /* Assets */,
+				3A195CAA270A66CE0075A556 /* Helpers */,
 				3A195C81270A637B0075A556 /* Info.plist */,
+				3A195CA9270A665B0075A556 /* Models */,
+				3A195CAB270A66DC0075A556 /* Storyboards */,
+				3A195CD3271F5ABA0075A556 /* Utilities */,
 			);
 			path = VMContacts;
 			sourceTree = "<group>";
@@ -126,6 +151,89 @@
 				3A195C97270A637B0075A556 /* Info.plist */,
 			);
 			path = VMContactsUITests;
+			sourceTree = "<group>";
+		};
+		3A195CA6270A64230075A556 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A195CAC270A68D40075A556 /* ContactList */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3A195CA7270A649A0075A556 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3A195C73270A63780075A556 /* AppDelegate.swift */,
+				3A195C75270A63780075A556 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3A195CA8270A66500075A556 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3A195C7C270A637B0075A556 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3A195CA9270A665B0075A556 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A195CB5270BA2BF0075A556 /* JSONResponse */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A195CAA270A66CE0075A556 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A195CC6270BACD70075A556 /* ApplicationContext.swift */,
+				3A195CCB270D028C0075A556 /* VMDataLoader.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A195CAB270A66DC0075A556 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3A195C79270A63780075A556 /* Main.storyboard */,
+				3A195C7E270A637B0075A556 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3A195CAC270A68D40075A556 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0B43B271F7EAA006880FC /* ContactsCollectionViewCell.swift */,
+				3AD0B43C271F7EAA006880FC /* ContactsCollectionViewCell.xib */,
+				3A195CB0270A6A990075A556 /* ContactsListPresenter.swift */,
+				3A195C77270A63780075A556 /* ContactsListViewController.swift */,
+				3AD0B442271F7EBF006880FC /* RoomsCollectionViewCell.swift */,
+				3AD0B443271F7EBF006880FC /* RoomsCollectionViewCell.xib */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		3A195CB5270BA2BF0075A556 /* JSONResponse */ = {
+			isa = PBXGroup;
+			children = (
+				3A195CB6270BA4D60075A556 /* Person.swift */,
+				3A195CBE270BA82B0075A556 /* Room.swift */,
+			);
+			path = JSONResponse;
+			sourceTree = "<group>";
+		};
+		3A195CD3271F5ABA0075A556 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A195CD4271F5AD40075A556 /* Colors.swift */,
+				3A195CDC271F5B150075A556 /* UIKitUtils.swift */,
+				3A195CE1271F5B370075A556 /* Utils.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A195C80270A637B0075A556 /* LaunchScreen.storyboard in Resources */,
+				3AD0B43E271F7EAA006880FC /* ContactsCollectionViewCell.xib in Resources */,
 				3A195C7D270A637B0075A556 /* Assets.xcassets in Resources */,
 				3A195C7B270A63780075A556 /* Main.storyboard in Resources */,
+				3AD0B445271F7EBF006880FC /* RoomsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +368,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A195C78270A63780075A556 /* ViewController.swift in Sources */,
+				3A195CDD271F5B150075A556 /* UIKitUtils.swift in Sources */,
+				3A195CB7270BA4D60075A556 /* Person.swift in Sources */,
+				3AD0B43D271F7EAA006880FC /* ContactsCollectionViewCell.swift in Sources */,
+				3A195CD5271F5AD40075A556 /* Colors.swift in Sources */,
+				3A195CCC270D028C0075A556 /* VMDataLoader.swift in Sources */,
+				3A195C78270A63780075A556 /* ContactsListViewController.swift in Sources */,
+				3A195CC7270BACD70075A556 /* ApplicationContext.swift in Sources */,
+				3A195CBF270BA82B0075A556 /* Room.swift in Sources */,
+				3A195CE2271F5B370075A556 /* Utils.swift in Sources */,
+				3A195CB1270A6A990075A556 /* ContactsListPresenter.swift in Sources */,
+				3AD0B444271F7EBF006880FC /* RoomsCollectionViewCell.swift in Sources */,
 				3A195C74270A63780075A556 /* AppDelegate.swift in Sources */,
 				3A195C76270A63780075A556 /* SceneDelegate.swift in Sources */,
 			);

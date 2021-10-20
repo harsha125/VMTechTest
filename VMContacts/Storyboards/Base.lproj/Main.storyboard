@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BDC-wW-WGr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts List View Controller-->
+        <scene sceneID="Pnz-8j-r7Q">
+            <objects>
+                <viewController storyboardIdentifier="ContactsListViewController" id="abf-AL-OIa" customClass="ContactsListViewController" customModule="VMContacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v0T-iI-CIp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ywf-bM-FrX">
+                                <rect key="frame" x="20" y="93" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Contacts"/>
+                                    <segment title="Rooms"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlTapped:" destination="abf-AL-OIa" eventType="valueChanged" id="Z4e-IV-tSX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZbO-uX-2eE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZbO-uX-2eE" firstAttribute="trailing" secondItem="Ywf-bM-FrX" secondAttribute="trailing" constant="20" id="Dfu-gM-lT9"/>
+                            <constraint firstItem="Ywf-bM-FrX" firstAttribute="top" secondItem="ZbO-uX-2eE" secondAttribute="top" constant="5" id="HCf-Ba-Yzx"/>
+                            <constraint firstItem="Ywf-bM-FrX" firstAttribute="leading" secondItem="ZbO-uX-2eE" secondAttribute="leading" constant="20" id="JJM-td-qcG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DAB-qq-uSd"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Ywf-bM-FrX" id="Vs9-A8-tkA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhf-PD-D8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926.0869565217392" y="-41.517857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NTl-C2-CD3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BDC-wW-WGr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Twc-uG-2ZX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="abf-AL-OIa" kind="relationship" relationship="rootViewController" id="mtK-IN-Zbd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8m-bm-IPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015.9420289855074" y="-41.517857142857139"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="Theme-Red"/>
+    <resources>
+        <namedColor name="Theme-Red">
+            <color red="0.7686274509803922" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

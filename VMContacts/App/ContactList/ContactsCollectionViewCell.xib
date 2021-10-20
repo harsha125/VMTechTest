@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContactsCollectionViewCell" id="gTV-IL-0wX" customClass="ContactsCollectionViewCell" customModule="VMContacts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="484" height="205"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="484" height="205"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQY-TJ-6aL">
+                        <rect key="frame" x="0.0" y="0.0" width="484" height="205"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OtO-2f-SUf">
+                                <rect key="frame" x="20" y="72.5" width="50" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OtO-2f-SUf" secondAttribute="height" multiplier="5:7" id="LAq-9z-C7b"/>
+                                    <constraint firstAttribute="width" constant="50" id="dLt-lE-86F"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eF4-yX-oYQ">
+                                <rect key="frame" x="80" y="10" width="384" height="185"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U52-bQ-D2Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkT-RQ-Gfe">
+                                        <rect key="frame" x="0.0" y="28.5" width="384" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-u8-3Zr">
+                                        <rect key="frame" x="0.0" y="57" width="384" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Phone: 1234567890
+email: asdfg@qwert.cvb</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eF4-yX-oYQ" firstAttribute="top" secondItem="rQY-TJ-6aL" secondAttribute="top" constant="10" id="1bZ-Yy-dGP"/>
+                            <constraint firstAttribute="bottom" secondItem="eF4-yX-oYQ" secondAttribute="bottom" constant="10" id="Asu-tD-oQX"/>
+                            <constraint firstItem="OtO-2f-SUf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rQY-TJ-6aL" secondAttribute="top" constant="10" id="BAU-Tc-ufM"/>
+                            <constraint firstItem="OtO-2f-SUf" firstAttribute="leading" secondItem="rQY-TJ-6aL" secondAttribute="leading" constant="20" id="EE9-gy-jDQ"/>
+                            <constraint firstItem="eF4-yX-oYQ" firstAttribute="leading" secondItem="OtO-2f-SUf" secondAttribute="trailing" constant="10" id="Z3J-rA-dgf"/>
+                            <constraint firstAttribute="trailing" secondItem="eF4-yX-oYQ" secondAttribute="trailing" constant="20" id="cec-yq-49X"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OtO-2f-SUf" secondAttribute="bottom" constant="10" id="eR8-vu-Kmc"/>
+                            <constraint firstItem="OtO-2f-SUf" firstAttribute="centerY" secondItem="eF4-yX-oYQ" secondAttribute="centerY" constant="5" id="eVh-F3-j4Q"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rQY-TJ-6aL" secondAttribute="trailing" id="I8n-sT-dKo"/>
+                <constraint firstItem="rQY-TJ-6aL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iPc-zB-9o2"/>
+                <constraint firstAttribute="bottom" secondItem="rQY-TJ-6aL" secondAttribute="bottom" id="qXc-Ii-EoK"/>
+                <constraint firstItem="rQY-TJ-6aL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wzP-u9-1tn"/>
+            </constraints>
+            <size key="customSize" width="484" height="205"/>
+            <connections>
+                <outlet property="contactDetailsTextView" destination="gyA-u8-3Zr" id="WA3-KU-X7t"/>
+                <outlet property="imageView" destination="OtO-2f-SUf" id="yjz-Jd-L5h"/>
+                <outlet property="jobTitleLabel" destination="vkT-RQ-Gfe" id="9mL-V8-c13"/>
+                <outlet property="nameLabel" destination="U52-bQ-D2Z" id="B3L-XK-338"/>
+            </connections>
+            <point key="canvasLocation" x="105.79710144927537" y="11.71875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

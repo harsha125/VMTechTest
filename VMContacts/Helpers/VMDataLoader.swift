@@ -47,17 +47,3 @@ final class DataLoader: DataLoaderProtocol {
     }
 
 }
-
-
-final class JSONItemsMapper<T: Decodable> {
-    
-    static func decodeAndMap(_ data: Data) throws -> T {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        guard let decodable = try? decoder.decode(T.self, from: data) else {
-            throw DataLoader.Error.invalidData
-        }
-        return decodable
-    }
-}
-

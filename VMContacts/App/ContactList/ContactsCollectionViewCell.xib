@@ -21,29 +21,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="484" height="205"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OtO-2f-SUf">
-                                <rect key="frame" x="20" y="72.5" width="50" height="70"/>
+                                <rect key="frame" x="5" y="65.5" width="60" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OtO-2f-SUf" secondAttribute="height" multiplier="5:7" id="LAq-9z-C7b"/>
-                                    <constraint firstAttribute="width" constant="50" id="dLt-lE-86F"/>
+                                    <constraint firstAttribute="width" constant="60" id="dLt-lE-86F"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eF4-yX-oYQ">
-                                <rect key="frame" x="80" y="10" width="384" height="185"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eF4-yX-oYQ">
+                                <rect key="frame" x="75" y="10" width="389" height="185"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U52-bQ-D2Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="389" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkT-RQ-Gfe">
-                                        <rect key="frame" x="0.0" y="28.5" width="384" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="389" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-u8-3Zr">
-                                        <rect key="frame" x="0.0" y="57" width="384" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-u8-3Zr">
+                                        <rect key="frame" x="0.0" y="41" width="389" height="123.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Phone: 1234567890
 email: asdfg@qwert.cvb</string>
@@ -52,6 +52,12 @@ email: asdfg@qwert.cvb</string>
                                         <textInputTraits key="textInputTraits"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeX-rB-dRp">
+                                        <rect key="frame" x="0.0" y="164.5" width="389" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -60,7 +66,7 @@ email: asdfg@qwert.cvb</string>
                             <constraint firstItem="eF4-yX-oYQ" firstAttribute="top" secondItem="rQY-TJ-6aL" secondAttribute="top" constant="10" id="1bZ-Yy-dGP"/>
                             <constraint firstAttribute="bottom" secondItem="eF4-yX-oYQ" secondAttribute="bottom" constant="10" id="Asu-tD-oQX"/>
                             <constraint firstItem="OtO-2f-SUf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rQY-TJ-6aL" secondAttribute="top" constant="10" id="BAU-Tc-ufM"/>
-                            <constraint firstItem="OtO-2f-SUf" firstAttribute="leading" secondItem="rQY-TJ-6aL" secondAttribute="leading" constant="20" id="EE9-gy-jDQ"/>
+                            <constraint firstItem="OtO-2f-SUf" firstAttribute="leading" secondItem="rQY-TJ-6aL" secondAttribute="leading" constant="5" id="EE9-gy-jDQ"/>
                             <constraint firstItem="eF4-yX-oYQ" firstAttribute="leading" secondItem="OtO-2f-SUf" secondAttribute="trailing" constant="10" id="Z3J-rA-dgf"/>
                             <constraint firstAttribute="trailing" secondItem="eF4-yX-oYQ" secondAttribute="trailing" constant="20" id="cec-yq-49X"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OtO-2f-SUf" secondAttribute="bottom" constant="10" id="eR8-vu-Kmc"/>
@@ -79,6 +85,7 @@ email: asdfg@qwert.cvb</string>
             <size key="customSize" width="484" height="205"/>
             <connections>
                 <outlet property="contactDetailsTextView" destination="gyA-u8-3Zr" id="WA3-KU-X7t"/>
+                <outlet property="createdOnLabel" destination="CeX-rB-dRp" id="Y3U-Vy-Czq"/>
                 <outlet property="imageView" destination="OtO-2f-SUf" id="yjz-Jd-L5h"/>
                 <outlet property="jobTitleLabel" destination="vkT-RQ-Gfe" id="9mL-V8-c13"/>
                 <outlet property="nameLabel" destination="U52-bQ-D2Z" id="B3L-XK-338"/>

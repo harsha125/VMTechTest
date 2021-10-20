@@ -49,6 +49,7 @@ class ContactsListViewController: UIViewController {
     }
     
     @IBAction func segmentControlTapped(_ sender: Any) {
+        presenter?.updateListType(to: ListType(rawValue: segmentedControl.selectedSegmentIndex) ?? .people)
     }
     
     private func addAccessibilityInfo() {
@@ -73,7 +74,8 @@ class ContactsListViewController: UIViewController {
         collectionView.keyboardDismissMode = .interactive
         collectionView.dataSource = self
         collectionView.register(nibForClass: ContactsCollectionViewCell.self)
-        collectionView.accessibilityIdentifier = "contacts.collectionView"
+        collectionView.register(nibForClass: RoomsCollectionViewCell.self)
+        collectionView.accessibilityIdentifier = "collectionView"
         
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -113,9 +115,21 @@ extension ContactsListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(ContactsCollectionViewCell.self, for: indexPath)
-        cell.configure(with: presenter?.getPersonData(for: indexPath))
-        cell.accessibilityIdentifier = "contacts.collectionView.cell.\(indexPath.row)"
+        guard let listType = presenter?.listType
+        else { return VMCollectionViewCell() }
+        let cell: VMCollectionViewCell
+        var cellData: BaseModelItem? = nil
+        switch listType {
+        case .people:
+            cell = collectionView.dequeueReusableCell(ContactsCollectionViewCell.self, for: indexPath)
+            cell.accessibilityIdentifier = "contacts.collectionView.cell.\(indexPath.row)"
+            cellData = presenter?.getData(for: indexPath) as? PersonItem
+        case .rooms:
+            cell = collectionView.dequeueReusableCell(RoomsCollectionViewCell.self, for: indexPath)
+            cell.accessibilityIdentifier = "rooms.collectionView.cell.\(indexPath.row)"
+            cellData = presenter?.getData(for: indexPath) as? RoomItem
+        }
+        cell.configure(with: cellData)
         return cell
     }
     
@@ -162,6 +176,7 @@ extension ContactsListViewController: ContactsListPresenterViewProtocol {
         if self.refreshControl.isRefreshing {
             self.refreshControl.endRefreshing()
         }
+        title = presenter?.listType == .people ? "Contacts" : "Rooms"
         collectionView.subviews.forEach { if $0.tag == 100 { $0.removeFromSuperview() } }
         switch state {
         case .success:

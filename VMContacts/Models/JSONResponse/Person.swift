@@ -16,7 +16,7 @@ struct Person: Codable {
     let favouriteColor: String?
     let email: String?
     let jobTitle: String?
-    let createdAt: String?
+    let createdAt: Date?
     let latitude: Double?
     let lastName: String?
  }

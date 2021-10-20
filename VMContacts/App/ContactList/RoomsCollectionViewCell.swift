@@ -7,11 +7,75 @@
 
 import UIKit
 
-class RoomsCollectionViewCell: UICollectionViewCell {
+final class RoomsCollectionViewCell: VMCollectionViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var createdOnLabel: UILabel!
+    @IBOutlet weak var maxOccupancyLabel: UILabel!
+    @IBOutlet weak var availabilityLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        applyStyle()
+        setupAccessibility()
+    }
+    
+    override func configure(with item: BaseModelItem?) {
+        guard let item = item as? RoomItem
+        else {
+            nameLabel.text = nil
+            maxOccupancyLabel.text = nil
+            availabilityLabel.text = nil
+            createdOnLabel.text = nil
+            return
+        }
+        nameLabel.text = "Name: \(item.name ?? "-")"
+        maxOccupancyLabel.text = "Maximum Occupancy: \(item.size)"
+        availabilityLabel.text = "Status: \(item.isOccupied == true ? "Full" : "Available")"
+        createdOnLabel.text = "Created At: \(item.formattedCreationDate)"
+        
+        if item.isOccupied == true {
+            availabilityLabel.textColor = .themeRed_C40202
+        } else {
+            availabilityLabel.textColor = .systemGreen
+        }
+        //Updating Accessibility
+        let accessibilityLabelText = [nameLabel.text,
+                                      createdOnLabel.text,
+                                      maxOccupancyLabel.text,
+                                      availabilityLabel.text]
+            .compactMap { $0 }
+            .joined(separator: ", ")
+        contentView.accessibilityLabel = accessibilityLabelText
+    }
+
+    
+}
+private extension RoomsCollectionViewCell {
+
+    func applyStyle() {
+        nameLabel.font = .makeScalableFont(weight: .semibold, defaultSize: 15.0)
+        maxOccupancyLabel.font = .makeScalableFont(weight: .regular, defaultSize: 14.0)
+        createdOnLabel.font = .makeScalableFont(weight: .light, defaultSize: 13.0)
+        availabilityLabel.font = .makeScalableFont(weight: .regular, defaultSize: 14.0)
+        nameLabel.numberOfLines = 0
+        maxOccupancyLabel.numberOfLines = 0
+        createdOnLabel.numberOfLines = 0
+        availabilityLabel.numberOfLines = 0
+        nameLabel.textColor = .blackTextColor
+        maxOccupancyLabel.textColor = .grayTextColor
+        createdOnLabel.textColor = .systemGray
+        availabilityLabel.textColor = .secondaryLabel
+    }
+
+    func setupAccessibility() {
+        nameLabel.accessibilityIdentifier = "rooms.collectionView.cell.label.name"
+        maxOccupancyLabel.accessibilityIdentifier = "rooms.collectionView.cell.label.maxOccupancyLabel"
+        createdOnLabel.accessibilityIdentifier = "rooms.collectionView.cell.label.createdOn"
+        availabilityLabel.accessibilityIdentifier = "rooms.collectionView.cell.label.maxOccupancyLabel"
+        contentView.isAccessibilityElement = true
+        accessibilityElements = [contentView]
+        isAccessibilityElement = false
     }
 
 }

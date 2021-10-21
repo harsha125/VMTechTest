@@ -17,11 +17,14 @@ final class ContactsCollectionViewCell: VMCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         applyStyle()
         setupAccessibility()
     }
+
+    //Override Configure method to configure the data for the cell
     override func configure(with item: BaseModelItem?) {
+        //Typecast the cell data object to PersonItem and
+        //render the data on cell by assigning it to relevant UI elements
         guard let item = item as? PersonItem
         else {
             imageView.image = nil
@@ -64,6 +67,7 @@ final class ContactsCollectionViewCell: VMCollectionViewCell {
 
 private extension ContactsCollectionViewCell {
 
+    //Setup appearance of UI elements
     func applyStyle() {
         nameLabel.font = .makeScalableFont(weight: .semibold, defaultSize: 15.0)
         jobTitleLabel.font = .makeScalableFont(weight: .regular, defaultSize: 14.0)
@@ -81,6 +85,7 @@ private extension ContactsCollectionViewCell {
         imageView.layer.masksToBounds = true
     }
     
+    //Configure Accessibility Identifiers, to uniquely identify the elements for UI Tests
     func setupAccessibility() {
         nameLabel.accessibilityIdentifier = "contacts.collectionView.cell.label.name"
         jobTitleLabel.accessibilityIdentifier = "contacts.collectionView.cell.label.jobTitle"

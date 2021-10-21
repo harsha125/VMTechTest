@@ -20,7 +20,10 @@ final class RoomsCollectionViewCell: VMCollectionViewCell {
         setupAccessibility()
     }
     
+    //Override Configure method to configure the data for the cell
     override func configure(with item: BaseModelItem?) {
+        //Typecast the cell data object to RoomItem and
+        //render the data on cell by assigning it to relevant UI elements
         guard let item = item as? RoomItem
         else {
             nameLabel.text = nil
@@ -53,6 +56,7 @@ final class RoomsCollectionViewCell: VMCollectionViewCell {
 }
 private extension RoomsCollectionViewCell {
 
+    //Setup appearance of UI elements
     func applyStyle() {
         nameLabel.font = .makeScalableFont(weight: .semibold, defaultSize: 15.0)
         maxOccupancyLabel.font = .makeScalableFont(weight: .regular, defaultSize: 14.0)
@@ -68,6 +72,7 @@ private extension RoomsCollectionViewCell {
         availabilityLabel.textColor = .secondaryLabel
     }
 
+    //Configure Accessibility Identifiers, to uniquely identify the elements for UI Tests
     func setupAccessibility() {
         nameLabel.accessibilityIdentifier = "rooms.collectionView.cell.label.name"
         maxOccupancyLabel.accessibilityIdentifier = "rooms.collectionView.cell.label.maxOccupancyLabel"

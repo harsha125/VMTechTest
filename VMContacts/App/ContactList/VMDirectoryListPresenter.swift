@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 
+//Enum to identify the selected Section
 enum ListType: Int {
     case people, rooms
 }
 
+//Enum to determine the Loading state, to decide what to display on the UI
 enum LoadingState {
     case success
     case error(error: DataLoader.Error)
@@ -32,7 +34,8 @@ protocol VMDirectoryListPresenterProtocol {
 final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
     
     private let view: VMDirectoryListPresenterViewProtocol
-    let context: ApplicationContext
+    private let context: ApplicationContext
+
     private var unfilteredContactList: [PersonItem]? = nil {
         didSet {
             dataSource = unfilteredContactList ?? []
@@ -45,8 +48,10 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
         }
     }
 
+    //Generic data source that can hold array of People And Rooms
     private(set) var dataSource: [BaseModelItem] = []
     
+    //Data Loader to fetch the data from the server through API Communicator
     private lazy var dataLoader: DataLoaderProtocol = {
         return DataLoader(client: context.apiCommunicator)
     }()
@@ -60,6 +65,7 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
     
     func loadContacts(forceLoading: Bool = true) {
         listType = .people
+        //Fetch the data from server only when loading for the first time OR when forced to load
         guard unfilteredContactList == nil ||
               forceLoading else {
             dataSource = unfilteredContactList ?? []
@@ -91,13 +97,14 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
     
     func loadRooms(forceLoading: Bool = true) {
         listType = .rooms
+        //Fetch the data from server only when loading for the first time OR when forced to load
         guard unfilteredRoomList == nil ||
               forceLoading else {
             dataSource = unfilteredRoomList ?? []
             view.reloadData(state: .success)
             return
         }
-        //Load data for Person list
+        //Load data for Rooms list
         //Update the UI when the data loading is completed(Success / Error)
         dataLoader.loadData(for: Room.self, from: AppConfig.shared.roomsURL) { [weak self] result in
             guard let self = self else {
@@ -119,6 +126,7 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
         }
     }
 
+    //Filter the list based on the input search string, for the selected section(currently displayed on UI)
     func filterList(for searchText: String?) {
 
         let unfilteredData:[BaseModelItem]? = listType == .people ? unfilteredContactList : unfilteredRoomList
@@ -131,6 +139,7 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
             view.reloadData(state: .success)
             return
         }
+        //Performing the search & Filter in the background thread to avoid freezing of UI
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self
             else { return }
@@ -141,6 +150,7 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
                 switch self.listType {
                 case .people:
                     let currentItem = item as? PersonItem
+                    //Predefined Search Criteria for People list
                     searchCriteriaArray = [currentItem?.fullName,
                                            currentItem?.email,
                                            currentItem?.jobTitle,
@@ -148,6 +158,7 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
                                            currentItem?.formattedCreationDate]
                 case .rooms:
                     let currentItem = item as? RoomItem
+                    //Predefined Search Criteria for People list
                     searchCriteriaArray = [currentItem?.name,
                                            currentItem?.formattedCreationDate]
                 }
@@ -158,6 +169,7 @@ final class VMDirectoryListPresenter: VMDirectoryListPresenterProtocol {
                 return !filtered.isEmpty
             } ?? []
             DispatchQueue.main.async {
+                //Performing UI updated on main thread
                 self.view.reloadData(state: .success)
             }
             

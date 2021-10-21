@@ -53,7 +53,7 @@ class VMDirectoryListViewController: UIViewController {
     }
     
     private func addAccessibilityInfo() {
-        collectionView.accessibilityLabel = "Contacts List"
+        collectionView.accessibilityLabel = "Directory List"
         collectionView.accessibilityIdentifier = "contacts.collectionview"
         searchController.searchBar.accessibilityLabel = "Contacts List Search bar"
         searchController.searchBar.searchTextField.accessibilityIdentifier = "contacts.searchField"
@@ -99,7 +99,14 @@ class VMDirectoryListViewController: UIViewController {
 
     @objc private func refreshList() {
         if !isSearching {
-            presenter?.loadContacts()
+            guard let presenter = presenter
+            else { return }
+            switch presenter.listType {
+            case .people:
+                presenter.loadContacts()
+            case .rooms:
+                presenter.loadRooms()
+            }
         }
     }
 
@@ -153,6 +160,7 @@ extension VMDirectoryListViewController: UISearchResultsUpdating {
 
 extension VMDirectoryListViewController: VMDirectoryListPresenterViewProtocol {
 
+    //Configure Error view when the State is Error / API call fails
     private func configureErrorView(with errorText: String) -> UIView {
         let errorView = UIView(frame: .zero)
         let errorLabel = UILabel()
@@ -176,6 +184,7 @@ extension VMDirectoryListViewController: VMDirectoryListPresenterViewProtocol {
         if self.refreshControl.isRefreshing {
             self.refreshControl.endRefreshing()
         }
+        //Update the title based on the selected Section on Segment control
         title = presenter?.listType == .people ? "Contacts" : "Rooms"
         collectionView.subviews.forEach { if $0.tag == 100 { $0.removeFromSuperview() } }
         switch state {

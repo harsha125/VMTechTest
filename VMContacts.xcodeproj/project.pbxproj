@@ -19,7 +19,7 @@
 		3A195CB7270BA4D60075A556 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CB6270BA4D60075A556 /* Person.swift */; };
 		3A195CBF270BA82B0075A556 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CBE270BA82B0075A556 /* Room.swift */; };
 		3A195CC7270BACD70075A556 /* ApplicationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CC6270BACD70075A556 /* ApplicationContext.swift */; };
-		3A195CCC270D028C0075A556 /* VMDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CCB270D028C0075A556 /* VMDataLoader.swift */; };
+		3A195CCC270D028C0075A556 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CCB270D028C0075A556 /* DataLoader.swift */; };
 		3A195CD5271F5AD40075A556 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CD4271F5AD40075A556 /* Colors.swift */; };
 		3A195CDD271F5B150075A556 /* UIKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CDC271F5B150075A556 /* UIKitUtils.swift */; };
 		3A195CE2271F5B370075A556 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A195CE1271F5B370075A556 /* Utils.swift */; };
@@ -37,6 +37,8 @@
 		3AD0B47F27208C31006880FC /* RoomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B47E27208C31006880FC /* RoomItem.swift */; };
 		3AD0B48A272093A5006880FC /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AD0B489272093A5006880FC /* people.json */; };
 		3AD0B48F27209408006880FC /* rooms.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AD0B48E27209408006880FC /* rooms.json */; };
+		3AD0B49A272177F6006880FC /* VMContactsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B499272177F6006880FC /* VMContactsMocks.swift */; };
+		3AD0B4A227217FF2006880FC /* VMDirectoryListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0B4A127217FF2006880FC /* VMDirectoryListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,7 @@
 		3A195CB6270BA4D60075A556 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		3A195CBE270BA82B0075A556 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		3A195CC6270BACD70075A556 /* ApplicationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationContext.swift; sourceTree = "<group>"; };
-		3A195CCB270D028C0075A556 /* VMDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDataLoader.swift; sourceTree = "<group>"; };
+		3A195CCB270D028C0075A556 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3A195CD4271F5AD40075A556 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3A195CDC271F5B150075A556 /* UIKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitUtils.swift; sourceTree = "<group>"; };
 		3A195CE1271F5B370075A556 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		3AD0B47E27208C31006880FC /* RoomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomItem.swift; sourceTree = "<group>"; };
 		3AD0B489272093A5006880FC /* people.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		3AD0B48E27209408006880FC /* rooms.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rooms.json; sourceTree = "<group>"; };
+		3AD0B499272177F6006880FC /* VMContactsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMContactsMocks.swift; sourceTree = "<group>"; };
+		3AD0B4A127217FF2006880FC /* VMDirectoryListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMDirectoryListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +163,10 @@
 		3A195C89270A637B0075A556 /* VMContactsTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A195C8A270A637B0075A556 /* VMContactsTests.swift */,
 				3A195C8C270A637B0075A556 /* Info.plist */,
+				3AD0B499272177F6006880FC /* VMContactsMocks.swift */,
+				3A195C8A270A637B0075A556 /* VMContactsTests.swift */,
+				3AD0B4A127217FF2006880FC /* VMDirectoryListTests.swift */,
 			);
 			path = VMContactsTests;
 			sourceTree = "<group>";
@@ -168,8 +174,8 @@
 		3A195C94270A637B0075A556 /* VMContactsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3A195C95270A637B0075A556 /* VMContactsUITests.swift */,
 				3A195C97270A637B0075A556 /* Info.plist */,
+				3A195C95270A637B0075A556 /* VMContactsUITests.swift */,
 			);
 			path = VMContactsUITests;
 			sourceTree = "<group>";
@@ -215,7 +221,7 @@
 				3AD0B45127204525006880FC /* AppConfig.swift */,
 				3A195CC6270BACD70075A556 /* ApplicationContext.swift */,
 				3AD0B44C272044DD006880FC /* Constants.swift */,
-				3A195CCB270D028C0075A556 /* VMDataLoader.swift */,
+				3A195CCB270D028C0075A556 /* DataLoader.swift */,
 				3AD0B45B27204758006880FC /* JSONItemsMapper.swift */,
 			);
 			path = Helpers;
@@ -224,8 +230,8 @@
 		3A195CAB270A66DC0075A556 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				3A195C79270A63780075A556 /* Main.storyboard */,
 				3A195C7E270A637B0075A556 /* LaunchScreen.storyboard */,
+				3A195C79270A63780075A556 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -235,11 +241,11 @@
 			children = (
 				3AD0B43B271F7EAA006880FC /* ContactsCollectionViewCell.swift */,
 				3AD0B43C271F7EAA006880FC /* ContactsCollectionViewCell.xib */,
-				3A195CB0270A6A990075A556 /* VMDirectoryListPresenter.swift */,
-				3A195C77270A63780075A556 /* VMDirectoryListViewController.swift */,
 				3AD0B442271F7EBF006880FC /* RoomsCollectionViewCell.swift */,
 				3AD0B443271F7EBF006880FC /* RoomsCollectionViewCell.xib */,
 				3AD0B46B2720787E006880FC /* VMCollectionViewCell.swift */,
+				3A195CB0270A6A990075A556 /* VMDirectoryListPresenter.swift */,
+				3A195C77270A63780075A556 /* VMDirectoryListViewController.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -429,7 +435,7 @@
 				3AD0B43D271F7EAA006880FC /* ContactsCollectionViewCell.swift in Sources */,
 				3AD0B46C2720787E006880FC /* VMCollectionViewCell.swift in Sources */,
 				3A195CD5271F5AD40075A556 /* Colors.swift in Sources */,
-				3A195CCC270D028C0075A556 /* VMDataLoader.swift in Sources */,
+				3A195CCC270D028C0075A556 /* DataLoader.swift in Sources */,
 				3A195C78270A63780075A556 /* VMDirectoryListViewController.swift in Sources */,
 				3AD0B45227204525006880FC /* AppConfig.swift in Sources */,
 				3AD0B45C27204758006880FC /* JSONItemsMapper.swift in Sources */,
@@ -452,7 +458,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD0B4A227217FF2006880FC /* VMDirectoryListTests.swift in Sources */,
 				3A195C8B270A637B0075A556 /* VMContactsTests.swift in Sources */,
+				3AD0B49A272177F6006880FC /* VMContactsMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

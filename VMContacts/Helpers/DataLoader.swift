@@ -1,5 +1,5 @@
 //
-//  VMDataLoader.swift
+//  DataLoader.swift
 //  VMContacts
 //
 //  Created by Harsha on 05/10/2021.
